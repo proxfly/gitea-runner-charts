@@ -33,18 +33,18 @@ spec:
         {{- end }}
     spec: {{ include "ar.pod" . | nindent 6 }}
 {{- if .Values.runner.config.enabled }}
-      - name: config
-        secret: 
-          secretName: {{ include "ar.fullname" . }}-config
+        - name: config
+          secret:
+            secretName: {{ include "ar.fullname" . }}-config
 {{- end }}
 {{- if .Values.runner.dockerDind.enabled }}
-      - name: docker-certs
-        emptyDir: {}
+        - name: docker-certs
+          emptyDir: {}
 {{- end }}
 {{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) (not .Values.runner.useStatefulSet) }}
-      - name: data
-        persistentVolumeClaim:
-          claimName: {{ include "ar.fullname" . }}-data
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "ar.fullname" . }}-data
 {{- else if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
   volumeClaimTemplates:
   - metadata:
