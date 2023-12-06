@@ -9,8 +9,8 @@
 To install the chart with the release name `act-runner`
 
 ```console
-$ helm repo add lmno http://charts.lmno.pk
-$ helm install act-runner lmno/act-runner
+$ helm repo add gitea-runner-charts https://github.com/proxfly/gitea-runner-charts
+$ helm install act-runner gitea-runner-charts/act-runner
 ```
 
 ## Values

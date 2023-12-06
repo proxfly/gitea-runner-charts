@@ -11,8 +11,8 @@
 To install the chart with the release name `act-runner`
 
 ```console
-$ helm repo add lmno http://charts.lmno.pk
-$ helm install act-runner lmno/{{ template "chart.name" . }}
+$ helm repo add gitea-runner-charts https://github.com/proxfly/gitea-runner-charts
+$ helm install act-runner gitea-runner-charts/{{ template "chart.name" . }}
 ```
 
 {{ template "chart.requirementsSection" . }}
